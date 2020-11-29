@@ -22,7 +22,9 @@ set -e # exit on failure
 srcdir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )
 
 # TODO: make this value configurable?
-image="ocamlsf/learn-ocaml:master"
+# image="ocamlsf/learn-ocaml:master"
+# image="pfitaxel/staging-learn-ocaml-editor:learn-ocaml-editor-docker"
+image="pfitaxel/staging-learn-ocaml-editor:fix-static-deploy-docker"
 
 pause() {
     read -r -s -n 1 -p "Press any key to ${1:-continue} (or ^C to exit)... "
@@ -52,6 +54,7 @@ clone_subdir() {
         git fetch --depth=1 origin
         git reset --hard "@{u}"
     else
+        # git clone https://github.com/pfitaxel/learn-ocaml.git -b fix-static-deploy --depth=1 "${srcdir}/.build/$repo"
         git clone https://github.com/ocaml-sf/learn-ocaml.git -b master --depth=1 "${srcdir}/.build/$repo"
         pushd "${srcdir}/.build/$repo"
     fi
@@ -78,7 +81,7 @@ EOF
     # make process-repo
     make
     make opaminstall
-    learn-ocaml build --root "$target_url" --repo=demo-repository
+    learn-ocaml build --base-url "$target_url" --repo=demo-repository
     rsync -av --delete-delay www/ "${srcdir}/docs"
     git describe --long --always > "${srcdir}/VERSION"
     popd
@@ -98,7 +101,7 @@ docker_gen() {
     : Create temporary directory...
     T=$(mktemp -d /tmp/learn-ocaml-www.XXX) || failtemp
     : Generate www using Docker...
-    sudo docker run --rm -i -v "$repository:/repository" -v "$T:/home/learn-ocaml/tmp" --entrypoint="" "$image" sh -c "learn-ocaml build --repo=/repository --root $target_url && mv -v www tmp/"
+    sudo docker run --rm -i -v "$repository:/repository" -v "$T:/home/learn-ocaml/tmp" --entrypoint="" "$image" sh -c "learn-ocaml build --repo=/repository --base-url $target_url && mv -v www tmp/"
     # : Replace docs folder...
     # rm -fr docs/
     # mv -v -T "$T/www" ./docs
@@ -134,7 +137,7 @@ deploy() {
     repo="learn-ocaml"
     # TODO: replace previous commit?
     git commit -m "Build $repo ($(<VERSION))" -e
-    pause push && git push
+    pause "git push" && git push
 }
 
 # deploy_locally "$@"
