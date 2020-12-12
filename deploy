@@ -23,8 +23,8 @@ srcdir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )
 
 # TODO: make this value configurable?
 # image="ocamlsf/learn-ocaml:master"
-# image="pfitaxel/staging-learn-ocaml-editor:learn-ocaml-editor-docker"
-image="pfitaxel/staging-learn-ocaml-editor:fix-static-deploy-docker"
+# image="pfitaxel/staging-learn-ocaml-editor:fix-static-deploy-docker"
+image="pfitaxel/staging-learn-ocaml-editor:learn-ocaml-editor-docker"
 
 pause() {
     read -r -s -n 1 -p "Press any key to ${1:-continue} (or ^C to exit)... "
