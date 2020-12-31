@@ -9,7 +9,7 @@
 # The args parser was generated from:
 #
 # ARG_OPTIONAL_SINGLE([image],[],[Learn-OCaml Docker image],[ocamlsf/learn-ocaml:master])
-# ARG_OPTIONAL_SINGLE([base-url],[],[Base URL of the website])
+# ARG_OPTIONAL_SINGLE([base-url],[],[Base URL of the website without trailing slash])
 # ARG_POSITIONAL_SINGLE([repo],[Path to Learn-OCaml repository],[./build/learn-ocaml/demo-repository])
 # ARG_HELP([Deploy Learn-OCaml statically])
 # ARGBASH_GO()
@@ -50,7 +50,7 @@ print_help()
 	printf 'Usage: %s [--image <arg>] [--base-url <arg>] [-h|--help] [<repo>]\n' "$0"
 	printf '\t%s\n' "<repo>: Path to Learn-OCaml repository (default: './build/learn-ocaml/demo-repository')"
 	printf '\t%s\n' "--image: Learn-OCaml Docker image (default: 'ocamlsf/learn-ocaml:master')"
-	printf '\t%s\n' "--base-url: Base URL of the website (no default)"
+	printf '\t%s\n' "--base-url: Base URL of the website without trailing slash (no default)"
 	printf '\t%s\n' "-h, --help: Prints help"
 }
 
