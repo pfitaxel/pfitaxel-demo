@@ -2,13 +2,13 @@
   {
     "learnocaml_version": "2",
     "kind": "exercise",
-    "title": "Demo of the exercise environment",
+    "title": "Demo of the exercise environment (MD version)",
     "stars": 0
   },
   {
     "id": "demo2",
     "prelude": "(* Some code is loaded in the toplevel before your code. *)\nlet greetings = \"Hello world!\"\n",
-    "template": "\nlet plus x y = x + y ;;\nlet plus_tests = [\n  ((1, 1), 2);\n  ((1, 0), 1)\n];;\n\nlet minus x y = y - x ;;\nlet minus_tests = [\n  ((1, 2), 1)\n];;\n\nlet times x y = x *\n",
+    "template": "\nlet plus x y = x + y ;;\n\nlet minus x y = y - x ;;\n\nlet times x y = x *\n",
     "descr": [
       [
         "",
@@ -16,9 +16,9 @@
       ]
     ],
     "prepare": "",
-    "test": "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",
-    "solution": "VhO2eCkMysu7oQ5eVRDXrnYVTRo2TEwzPVVCQUOgc16At99tWWDKVychqfXAl1/t5WCUKnxauaG6Qs9Zx7GXsj6fRpV7RMcGmK1Ar1FTMKFoUgUln0sDtDoHHcRC6Sqg+uGWrIRPWaW3YW8TU8FAbqjI8WmNT9GwfQQCiJ8oxH6I9wutYACp53uJBDNPEPHi1l5pZ8sVXEkwVF6DW4jsnC+fSTk+YNJkPmiguPznsWzA13tuJ7Gbd+FCjWvvIhWnQ7QLXWIB8i+8i8OxlAAiwmo2/QeBdVHaPE5WzUK+ItZA9Nvbb5==",
-    "max-score": 48,
+    "test": "WgCys43oNQjMFZ8s8K6Ow7YPTTgUSVZLPTxeWVXsfMAnr/pXVWCIG71HabyruvcloFTlVWNnvaHkIIwQeGLDgmkkS6Q6WhZIouAf9tVTMPIRLwUJ/PkRsDVVGdZx9SLaQO74qxQGW4LfNDqTTmFIdxrIdAPZXoWup65CnwaHriMOprL5cfYaGwkvkqSCkkLlYmoBZ6EZGR/wEBFBV3vdsiiqDihBKZQRDGuSe4vfvzfXYOttLDfacr5Q/mr7Kg3bQ8YCUWJu5kaQcGXsmUhpdyoQ/Q+PgkGoI/V4/6+RXhRCng+x5lldqNAlOcNPMU8f7h7MVhlLBKC9V9nBjYLlLoiAb4qakGBSjG4FsM3C4Pc8Wz2MER9Z+7oTRVo4cdLIOewBPVVxxFdHP4Xhq4zF2YwipDYtPPC5xUTZ1rkqlugA3lt4NlOECaThV3jEAGTn1UeBCwLyLqwwGkWMCcgtbkL9zevRB/8q6EsxyAN9HLOaovgG5QtVv+RNTIzp7fB9FNu7tuzR1FPG+wivzxIMfGMIAo5RZB90JF/4QEOept5er9EcVWD0Xp6hw0jobaIwoCbU2i2bfvbmVs9Kx7OHt9IyE/670YdL9sgaeYQAFe1nGspA8g/RqDoVFs6Kf7LpB1OOa2IwQaKTYHK1ASsKbrrIgpyFT6WudAQBmJ7McEAYfrLecdVpXs5b943+aU38LQIZBVgXZ5tWUVZUW43eyETwDyEANJIQPVKsuLiehnDENJQEZ7+mxus49FajKgv5QycMBWI2zAqAr7qsbQBzw85DlBmDzVGdPFUWjEKRIqcA9dqolFp4qMtlMdFDMVmmdJOETwIHF0zsTTGAngX3PRTAhx7n67QX/nTbwMfCA4Z8STZMZVoBTW9S2lB3bunB2PR0PkVejmpdPO7tqebv2xkplXk8Db+IxVaZE+Iu/bxHZVYrJEXISNjcMKPeE6rmN5a1AZLyLrcmGUOMCcgtu9C0jqiQTo+dlEdb6oYoUqvgosBG8BUVhOxZTITV8ukmQMC4baWBOQ7RLwGzgIIBczNBTUpRGWIZYQEDGRCsh155r99tRjm0SywhsvnkfOd5kDjUAzwn/h5=",
+    "solution": "VhO2eCkMysu7oQ5eVRDXrnYVTR6YVFoK+QlRHRCmfMERc5RwVSjSESYuu0GcdbMsoDjbMnYzfr0xCZBVgnrKq9xjDVFuO5==",
+    "max-score": 40,
     "depend": null,
     "dependencies": []
   },
