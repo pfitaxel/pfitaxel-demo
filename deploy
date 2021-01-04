@@ -6,7 +6,7 @@
 # This script is contributed under the terms of the MIT license,
 # cf. <https://spdx.org/licenses/MIT.html>
 #
-_version="1.0.2"
+_version="1.0.3"
 #
 # The args parser was generated from:
 #
@@ -275,7 +275,7 @@ deploy() {
     pause "git push" && git push
 }
 
-# deploy_locally "$@"
-deploy "$@"
+# deploy_locally "$_arg_repo"
+deploy "$_arg_repo"
 
 # ] <-- needed because of Argbash
