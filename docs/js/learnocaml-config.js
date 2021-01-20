@@ -1,8 +1,8 @@
 var learnocaml_config = {
-  enableTryocaml: true,
-  enablePlayground: true,
-  enableLessons: true,
-  enableExercises: true,
+  enableTryocaml: false,
+  enablePlayground: false,
+  enableLessons: false,
+  enableExercises: false,
   enableToplevel: true,
   baseUrl: "https://pfitaxel.github.io/pfitaxel-demo"
 }
